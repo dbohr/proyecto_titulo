@@ -1,0 +1,55 @@
+-- Creación de la tabla dim_ubicacion
+CREATE TABLE Dim_Ubicacion (
+    id_cesfam INT PRIMARY KEY NOT NULL,
+    nombre_cesfam NVARCHAR(100) NOT NULL, 
+    direccion NVARCHAR(100) NOT NULL,
+    comuna NVARCHAR(100) NOT NULL,
+    region NVARCHAR(100) NOT NULL
+);
+
+-- Creación de la tabla dim_medicamento
+CREATE TABLE Dim_Medicamento (
+    id_medicamento INT PRIMARY KEY NOT NULL,
+    nombre NVARCHAR(100) NOT NULL,
+    dosis NVARCHAR(100) NOT NULL,
+    medicion NVARCHAR(100) NOT NULL,
+    fecha_venc DATE NOT NULL,
+    lote NVARCHAR(100) NOT NULL,
+    cantidad INT NOT NULL
+);
+
+-- Creación de la tabla dim_paciente
+CREATE TABLE Dim_Paciente (
+    id_paciente INT PRIMARY KEY NOT NULL,
+    nombre_completo NVARCHAR(100) NOT NULL,
+    rut NVARCHAR(100) NOT NULL,
+    es_cronico BIT NOT NULL,
+	edad INT NOT NULL,
+	sexo NVARCHAR(100) NOT NULL
+);
+
+-- Creación de la tabla dim_receta
+CREATE TABLE Dim_Receta (
+    id_folio INT PRIMARY KEY NOT NULL,
+    medico_asociado NVARCHAR(100) NOT NULL,
+    diagnostico NVARCHAR(200) NOT NULL,
+    medicamento NVARCHAR(200) NOT NULL,
+    cantidad INT NOT NULL,
+    dosis_total NVARCHAR(200) NOT NULL
+);
+
+-- Creación de la tabla de hechos
+CREATE TABLE Hechos (
+    id_despacho INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    fecha_emision DATE NOT NULL,
+	cantidad_medicamento INT NOT NULL,
+	cesfam_id INT NOT NULL,
+    medicamento_id INT NOT NULL,
+    paciente_id INT NOT NULL,
+    receta_id INT NOT NULL,
+    FOREIGN KEY (receta_id) REFERENCES Dim_Receta(id_folio),
+    FOREIGN KEY (paciente_id) REFERENCES Dim_Paciente(id_paciente),
+    FOREIGN KEY (medicamento_id) REFERENCES Dim_Medicamento(id_medicamento),
+    FOREIGN KEY (cesfam_id) REFERENCES Dim_Ubicacion(id_cesfam)
+);
+

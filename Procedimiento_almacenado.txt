@@ -1,0 +1,34 @@
+CREATE PROCEDURE Procedimiento_Despacho
+    @fecha_emision DATETIME,
+    @cantidad_medicamento INT,
+    @CesfamID INT,
+    @MedicamentoID INT,
+    @PacienteID INT,
+    @RecetaID INT,
+    @CantidadARestar INT
+AS
+BEGIN
+    BEGIN TRY
+        -- Inicia una transacción para garantizar la consistencia
+        BEGIN TRANSACTION;
+
+        -- Inserta los datos del paciente en la tabla correspondiente
+        INSERT INTO app_despacho(fecha_emision, cantidad_medicamento, cesfam_id, medicamento_id, paciente_id, receta_id)
+        VALUES (@fecha_emision, @cantidad_medicamento, @CesfamID, @MedicamentoID, @PacienteID, @RecetaID);
+
+        -- Actualiza la cantidad de medicamentos restando la cantidad necesaria
+            UPDATE app_medicamento
+			SET Cantidad = Cantidad - @CantidadARestar
+			WHERE medicamento_id = @MedicamentoID;
+
+        -- Confirma la transacción
+        COMMIT;
+    END TRY
+    BEGIN CATCH
+        -- Si ocurre un error, revierte la transacción
+        ROLLBACK;
+        -- Propaga el error
+        THROW;
+    END CATCH;
+END;
+GO

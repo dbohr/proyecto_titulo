@@ -1,0 +1,431 @@
+INSERT INTO app_region (nombre)
+VALUES ('Región Metropolitana');
+
+INSERT INTO app_comuna (nombre, region_id)
+VALUES ('Puente Alto', '1');
+
+INSERT INTO app_cesfam (nombre_cesfam, direccion, comuna_id, region_id)
+VALUES ('Centro de Salud Familiar Dr. Alejandro del Río', 'Gandarillas #105', '1', '1'),
+	   ('Centro de Salud Familiar Padre Manuel Villaseca', 'Avda. Luis Matte Larraín #02312', '1', '1'),
+	   ('Centro de Salud Familiar San Gerónimo', 'Avda. San Pedro #1203. San Gerónimo', '1', '1'),
+	   ('Centro de Salud Familiar Bernardo Leighton', 'Miguel Ángel #1929', '1', '1'),
+	   ('Centro de Salud Familiar Karol Wojtyla', 'Curaco de Vélez #4110. Villa Pedro Lira', '1', '1'),
+	   ('Centro de Salud Familiar Cardenal Raúl Silva Henríquez', '	San Pedro #3345. Villa El Volcán', '1', '1'),
+	   ('Centro de Salud Familiar Laurita Vicuña', 'Ejército Libertador #2433. Villa La Foresta', '1', '1'),
+	   ('Centro de Salud Familiar Vista Hermosa', 'Calle El Volcán #04549, Villa San Alberto, Casas Viejas', '1', '1');
+
+INSERT INTO app_categoria (nombre)
+VALUES ('Antialérgicos'), ('Antidiarreicos'), ('Antiinflamatorios'), ('Antibióticos'), ('Anticoagulantes'), ('Antihipertensivos'), ('Antidiabéticos'), ('Antidrepesivos'),
+       ('Antiepilépticos'), ('Antipsicóticos'), ('Estabilizador del ánimo'), ('Anticonceptivos'), ('Diuréticos ');
+
+INSERT INTO app_rol (nombre_rol, descripcion)
+VALUES ('Técnico en Farmacia', 'Cargo para técnico en farmacia'), ('Químico Farmacéutico', 'Cargo para profesional en farmacia');
+
+
+-- INSERT MEDICAMENTO.
+INSERT INTO app_medicamento (nombre, dosis, medicion, tipo, fecha_venc, lote, cantidad, laboratorio, lugar_almacenamiento, habilitado, categoria_id)
+VALUES
+-- Antialérgicos:
+('Desloratadina','5','mg','Comprimidos','2028-11-30','00548','2400','Abbott Laboratories de Chile Ltda.','Bodega, espacio 1', '1', '1'),
+('Clorfenamina','4','mg','Comprimidos','2027-07-31','05747','1300','Laboratorio Chile','Bodega, espacio 1', '1', '1'),
+('Loratadina','10','mg','Comprimidos','2025-08-31','00044','1400','Laboratorio Chile','Bodega, espacio 1', '1', '1'),
+('Levocetirizina','5','mg','Comprimidos','2026-06-30','04875','1900','Laboratorio Merck','Bodega, espacio 1', '1', '1'),
+('Desloratadina','5','mg','Comprimidos','2024-04-30','03687','1000','Abbott Laboratories de Chile Ltda.','Bodega, espacio 1', '1', '1'),
+('Clorfenamina','4','mg','Comprimidos','2023-12-31','00257','500','Laboratorio Chile','Bodega, espacio 1', '1', '1'),
+('Loratadina','10','mg','Comprimidos','2024-12-31','47125','450','Laboratorio Chile','Bodega, espacio 1', '1', '1'),
+('Levocetirizina','5','mg','Comprimidos','2024-05-31','74854','740','Laboratorio Merck','Bodega, espacio 1', '1', '1'),
+
+-- Antidiarréicos:
+('Loperamida','2','mg','Comprimidos','2023-09-30','93742','15','Abbott Laboratories de Chile Ltda.','Bodega, espacio 2', '1', '2'),
+('Bioflora','250','mg','Comprimidos','2026-04-30','00458','1200','Maver.','Bodega, espacio 2', '1', '2'),
+('Loperamida','2','mg','Comprimidos','2028-09-30','01447','3200','Abbott Laboratories de Chile Ltda.','Bodega, espacio 2', '1', '2'),
+('Bioflora','250','mg','Comprimidos','2023-12-31','00035','30','Maver.','Bodega, espacio 2',  '1', '2'),
+
+--Antiinflamatorios:
+('Ibuprofeno','400','mg','Comprimidos','2024-08-31','65422','950','Abbott Laboratories de Chile Ltda.','Bodega, espacio 3', '1', '3'),
+('Ibuprofeno','600','mg','Comprimidos','2027-04-30','00484','2580','Abbott Laboratories de Chile Ltda.','Bodega, espacio 3', '1', '3'),
+('Paracetamol','500','mg','Comprimidos','2028-01-31','01047','6200','Laboratorio Chile','Bodega, espacio 3', '1', '3'),
+('Paracetamol','1000','mg','Comprimidos','2027-10-31','01577','4150','Laboratorio Chile','Bodega, espacio 3', '1', '3'),
+('Celecoxib','200','mg','Comprimidos','2028-07-31','15444','3500','Ascend','Bodega, espacio 3', '1', '3'),
+('Ketoprofeno','50','mg','Comprimidos','2024-09-30','00455','2100','Mintlab','Bodega, espacio 3', '1', '3'),
+('Ibuprofeno','400','mg','Comprimidos','2027-07-31','00787','2000','Abbott Laboratories de Chile Ltda.','Bodega, espacio 3', '1', '3'),
+('Ibuprofeno','600','mg','Comprimidos','2023-12-31','56693','600','Abbott Laboratories de Chile Ltda.','Bodega, espacio 3', '1', '3'),
+('Paracetamol','500','mg','Comprimidos','2023-12-31','12365','1200','Laboratorio Chile','Bodega, espacio 3', '1', '3'),
+('Paracetamol','1000','mg','Comprimidos','2024-03-31','00454','990','Laboratorio Chile','Bodega, espacio 3', '1', '3'),
+('Celecoxib','200','mg','Comprimidos','2024-06-30','00687','1000','Ascend','Bodega, espacio 3', '1', '3'),
+('Ketoprofeno','50','mg','Comprimidos','2023-12-31','00056','1000','Mintlab','Bodega, espacio 3', '1', '3'),
+
+
+--Antibióticos:
+('Amoxicilina','500','mg','Comprimidos','2026-11-30','17222','3400','Abbott Laboratories de Chile Ltda.','Bodega, espacio 4', '1', '4'),
+('Levofloxacina','750','mg','Comprimidos','2024-04-30','00955','1300','Eurofarma','Bodega, espacio 4', '1', '4'),
+('Amoxicilina','500','mg','Comprimidos','2025-01-31','14452','1400','Abbott Laboratories de Chile Ltda.','Bodega, espacio 4', '1', '4'),
+('Levofloxacina','750','mg','Comprimidos','2023-12-31','00344','600','Eurofarma','Bodega, espacio 4', '1', '4'),
+('Amoxicilina','500','mg','Comprimidos','2023-12-31','00558','700','Abbott Laboratories de Chile Ltda.','Bodega, espacio 4', '1', '4'),
+('Levofloxacina','750','mg','Comprimidos','2027-12-31','00122','3000','Eurofarma','Bodega, espacio 4', '1', '4'),
+
+
+--Anticoagulantes:
+('Rivaroxabán', '15', 'mg', 'Comprimidos', '2025-12-31', '00256', '1600', 'Bayer S.A', 'Bodega, espacio 5', '1', '5'),
+('Aspirina', '100', 'mg', 'Comprimidos', '2027-06-30', '00477', '3000', 'Bayer S.A', 'Bodega, espacio 5', '1', '5'),
+
+
+--Antihipertensivos:
+('Losartán', '50', 'mg', 'Comprimidos', '2028-05-31', '04845', '4000', 'Opko', 'Bodega, espacio 6', '1', '6'),
+('Valsartán', '160', 'mg', 'Comprimidos', '2024-08-31', '04845', '900', 'Saval', 'Bodega, espacio 6', '1', '6'),
+('Enalapril', '10', 'mg', 'Comprimidos', '2026-04-30', '23029', '6000', 'Andrómaco', 'Bodega, espacio 6', '1', '6'),
+
+
+--Antidiabéticos:
+('Metformina', '850', 'mg', 'Comprimidos', '2027-05-31', '14658', '5990', 'Ascend', 'Bodega, espacio 7', '1', '7'),
+('Metformina', '500', 'mg', 'Comprimidos', '2026-07-31', '45123', '4200', 'Ascend', 'Bodega, espacio 7', '1', '7'),
+('Glibenclamida', '5', 'mg', 'Comprimidos', '2028-07-31', '14782', '3600', 'Laboratorio Chile', 'Bodega, espacio 7', '1', '7'),
+
+
+--Antidepresivos:
+('Escitalopram', '10', 'mg', 'Comprimidos', '2023-12-31', '00045', '350', 'Opko', 'Bodega, espacio 8', '1', '8'),
+('Escitalopram', '20', 'mg', 'Comprimidos', '2023-12-31', '00745', '150', 'Opko', 'Bodega, espacio 8', '1', '8'),
+('Escitalopram', '10', 'mg', 'Comprimidos', '2025-11-30', '00116', '1500', 'Opko', 'Bodega, espacio 8', '1', '8'),
+('Escitalopram', '20', 'mg', 'Comprimidos', '2026-12-31', '00745', '2000', 'Opko', 'Bodega, espacio 8', '1', '8'),
+('Fluoxetina', '20', 'mg', 'Comprimidos', '2023-12-31', '00985', '400', 'Laboratorio Chile', 'Bodega, espacio 8', '1', '8'),
+('Fluoxetina', '20', 'mg', 'Comprimidos', '2026-12-31', '11168', '3200', 'Laboratorio Chile', 'Bodega, espacio 8', '1', '8'),
+('Fluoxetina', '20', 'mg', 'Comprimidos', '2024-05-31', '00014', '1000', 'Laboratorio Chile', 'Bodega, espacio 8', '1', '8'),
+('Venlafaxina', '75', 'mg', 'Comprimidos', '2023-12-31', '01142', '600', 'Ascend', 'Bodega, espacio 8', '1', '8'),
+('Venlafaxina', '75', 'mg', 'Comprimidos', '2025-12-31', '00035', '3500', 'Ascend', 'Bodega, espacio 8', '1', '8'),
+
+
+--Antiepilépticos:
+('Lamotrigina', '25', 'mg', 'Comprimidos', '2024-12-31', '00095', '2500', 'Laboratorio Chile', 'Bodega, espacio 9', '1', '9'),
+('Lamotrigina', '50', 'mg', 'Comprimidos', '2026-12-31', '02541', '3000', 'Laboratorio Chile', 'Bodega, espacio 9', '1', '9'),
+('Lamotrigina', '100', 'mg', 'Comprimidos', '2023-12-31', '00412', '750', 'Laboratorio Chile', 'Bodega, espacio 9', '1', '9'),
+
+
+--Antipsicóticos:
+('Quetiapina', '100', 'mg', 'Comprimidos', '2023-12-31', '00742', '1500', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+('Quetiapina', '25', 'mg', 'Comprimidos', '2024-04-30', '00321', '2000', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+('Quetiapina', '100', 'mg', 'Comprimidos', '2024-03-31', '00065', '4000', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+('Aripiprazol', '15', 'mg', 'Comprimidos', '2023-12-31', '00845', '420', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+('Aripiprazol', '10', 'mg', 'Comprimidos', '2023-12-31', '00657', '680', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+('Aripiprazol', '15', 'mg', 'Comprimidos', '2025-05-31', '04268', '2500', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+('Aripiprazol', '10', 'mg', 'Comprimidos', '2026-07-31', '01874', '3698', 'Ascend', 'Bodega, espacio 10', '1', '10'),
+
+
+--Estabilizador del ánimo:
+('Ácido Valproico', '250', 'mg', 'Comprimidos', '2023-12-31', '00785', '980', 'Andrómaco', 'Bodega, espacio 11', '1', '11'),
+('Ácido Valproico', '500', 'mg', 'Comprimidos', '2023-12-31', '22785', '1000', 'Andrómaco', 'Bodega, espacio 11', '1', '11'),
+('Ácido Valproico', '250', 'mg', 'Comprimidos', '2028-07-31', '04876', '6400', 'Andrómaco', 'Bodega, espacio 11', '1', '11'),
+('Ácido Valproico', '500', 'mg', 'Comprimidos', '2027-03-31', '11475', '5200', 'Andrómaco', 'Bodega, espacio 11', '1', '11'),
+('Carbonato de Litio', '300', 'mg', 'Comprimidos', '2023-12-31', '00221', '780', 'Eurofarma', 'Bodega, espacio 11', '1', '11'),
+('Carbonato de Litio', '300', 'mg', 'Comprimidos', '2027-03-31', '00369', '3500', 'Eurofarma', 'Bodega, espacio 11', '1', '11'),
+
+
+--Anticonceptivos:
+('Novafem', '25', 'mg', 'Inyectable', '2027-03-31', '00035', '7000', 'Silesia', 'Bodega, espacio 12', '1', '12'),
+('Sayana', '104', 'mg', 'Inyectable', '2025-05-31', '00068', '3200', 'Pfizer', 'Bodega, espacio 12', '1', '12'),
+('Acotol', '2', 'mg', 'Comprimidos', '2026-08-31', '00013', '4000', 'Abbott Laboratories de Chile Ltda.', 'Bodega, espacio 12', '1', '12'),
+
+
+--Diuréticos:
+('Hidroclorotiazida', '50', 'mg', 'Comprimidos', '2026-03-31', '00593', '6900', 'Laboratorio Chile', 'Bodega, espacio 13', '1', '13');
+
+
+INSERT INTO app_paciente (nombre_completo, rut, edad, sexo, es_cronico)
+VALUES ('Carmen Jiménez Vargas', '21098765-4', '21', 'Femenino', '1'),
+('Patricia Vargas Ruiz', '10987657-3', '58', 'Femenino', '1'),
+('Rosa Ruiz Moreno', '10987654-2', '56', 'Femenino','1'),
+('Lucía Moreno Herrera', '10469876-7', '54', 'Femenino', '1'),
+('Ana María Herrera Castro', '5432109-6', '75', 'Femenino','1'),
+('Beatriz Castro Ortega', '6543210-7', '70', 'Femenino', '1'),
+('Raquel Ortega Medina', '7654321-8', '68', 'Femenino', '1'),
+('Estela Medina Guzmán', '8765432-9', '65', 'Femenino', '1'),
+('Lorena Guzmán Ríos', '9109876-4', '61', 'Femenino', '1'),
+('Silvia Ríos Mendoza', '7210987-5', '67', 'Femenino', '1'),
+('Gloria Mendoza Paredes', '5321098-6', '72', 'Femenino', '1'),
+('Clara Paredes Cordero', '6432109-7', '70', 'Femenino', '1'),
+('Victoria Cordero Delgado', '7543210-8', '69', 'Femenino', '1'),
+('Blanca Delgado Ponce', '8654321-9', '67', 'Femenino', '1'),
+('Andrea Ponce Rojas', '9765432-0', '61', 'Femenino', '0'),
+('Sandra Rojas Cabello', '10987654-3', '55', 'Femenino', '0'),
+('Natalia Cabello Núñez', '11098765-4', '50', 'Femenino', '0'),
+('Adriana Núñez Benítez', '16109876-5', '36', 'Femenino', '1'),
+('Julia Benítez Molina', '16565656-4', '35', 'Femenino', '0'),
+('Alba Molina Arias', '16210987-6', '36', 'Femenino', '0'),
+('Miriam Arias Vega', '18321098-7', '29', 'Femenino','0'),
+('Vanessa Vega Ochoa', '19432109-8', '26', 'Femenino', '1'),
+('Diana Ochoa Navarro', '17543210-9', '32', 'Femenino', '0'),
+('Gabriela Navarro Mora', '15654321-0', '39', 'Femenino', '0'),
+('Camila Mora Rivas', '13765432-1', '41', 'Femenino', '1'),
+('Susana Rivas Solís', '19987654-4', '27', 'Femenino', '0'),
+('Yolanda Solís Cárdenas', '21098765-5', '18', 'Femenino', '0'),
+('Raquel Cárdenas Miranda', '13141516-0', '40', 'Femenino', '1'),
+('Mariana Miranda Espinosa', '12131415-9', '47', 'Femenino', '0'),
+('Erika Espinosa Soto', '21121314-8', '21', 'Femenino', '0'),
+('Consuelo Soto León', '20111213-7', '17', 'Femenino', '1'),
+('Irene León Reyes', '10919293-6', '57', 'Femenino','0'),
+('Eloísa Reyes Campos', '18797071-4', '29', 'Femenino', '0'),
+('Araceli Campos Valdez', '17686960-3', '33', 'Femenino', '1'),
+('Olga Valdez Pacheco', '16575859-2', '38', 'Femenino','0'),
+('Lourdes Pacheco Maldonado', '15464748-1', '40', 'Femenino', '0'),
+('Rosa María Maldonado Gallegos', '14353637-0', '43', 'Femenino', '1'),
+('Alejandra Gallegos Cisneros', '13242526-9', '47', 'Femenino', '0'),
+('Emilia Cisneros Bautista', '12131415-8', '56', 'Femenino', '0'),
+('Maribel Bautista Peña', '18787878-6', '28', 'Femenino', '1'),
+('Paola Peña García', '17676767-5', '34', 'Femenino', '0'),
+
+--50 pacientes yona
+('Carlos Abrigo Ruiz','12111222-2', '47', 'Masculino', '0'),
+('Juan Santos Bianchi','12221332-4', '47', 'Masculino',  '1'),
+('Pedro Martínez León','12341691-9', '49', 'Masculino',  '0'),
+('Javier Alejandro Silva','12456882-7', '47', 'Masculino',  '0'),
+('Miguel Angel Torres','12221332-1', '48', 'Masculino',  '1'),
+('Ricardo José Hernández','12221332-5', '49', 'Masculino',  '1'),
+('Luis Eduardo Guzmán','12221332-8', '47', 'Masculino', '1'),
+('Fernando Gabriel Reyes','12221332-6', '46', 'Masculino',  '1'),
+('Roberto Carlos Sánchez','12543162-3', '48', 'Masculino',  '1'),
+('José Antonio Páez','12772112-8', '47', 'Masculino',  '0'),
+('Andrés Gomez Arias','13112334-9', '42', 'Masculino',  '0'),
+('Oscar Mano Vargas','13556443-3', '43', 'Masculino',  '0'),
+('Diego Piña Mora','13765456-2', '44', 'Masculino',  '0'),
+('Santiago Cereza Cruz','13997654-1', '45', 'Masculino',  '0'),
+('Alejandro Bahamondes Pérez','13542446-4', '41', 'Masculino',  '0'),
+('Manuel Massú Ríos','13213444-7', '40', 'Masculino', '0'),
+('Federico Rojas Ruiz','13667554-8', '43', 'Masculino',  '0'),
+('Hernán Pizarro Gómez','13998332-1', '42', 'Masculino',  '1'),
+('Gustavo Sanchez Bécquer','13887632-5', '41', 'Masculino',  '1'),
+('Francisco Retamal Clavijo','13887665-4', '42', 'Masculino',  '1'),
+('Rafael Castro Pérez','14221663-1', '39', 'Masculino',  '1'),
+('Hugo Zico Chávez','14357645-2', '39', 'Masculino',  '1'),
+('Ernesto Maduro Prieto','14552645-6', '38', 'Masculino',  '1'),
+('Cristóbal Colón Carvajal','14442611-1', '37', 'Masculino',  '1'),
+('Simón Sereno Bolívar','14776655-9', '37', 'Masculino',  '1'),
+('Pablo Toro Escobar','14334112-5', '39', 'Masculino',  '1'),
+('José Borghi Acevedo','14334221-7', '38', 'Masculino',  '1'),
+('Gabriel Manriquez Hernández','14122997-3', '37', 'Masculino',  '0'),
+('Mario Vargas Llosa','14332113-4', '37', 'Masculino',  '0'),
+('Octavio Paz Lozano','14442998-8', '39', 'Masculino',  '0'),
+('Carlos Fuentes Macías','15462768-3', '36', 'Masculino',  '0'),
+('Julio Cortez Desimil','15221298-8', '36', 'Masculino',  '0'),
+('Ernesto Sabato Onaindia','15333458-8','37', 'Masculino', '0'),
+('Adolfo Casares Lucero','15553221-8', '36', 'Masculino',  '0'),
+('Jorge Claro Acevedo','19464776-8', '27', 'Masculino', '0'),
+('Rulfo Soto Pena','15887665-8', '38', 'Masculino',  '0'),
+('Pedro Fonseca Armijo','15477554-8', '36', 'Masculino',  '0'),
+('Mario Hamlet Brenno','23334223-8', '16', 'Masculino',  '0'),
+('Rubén García Sarmiento','15552444-8', '36', 'Masculino',  '0'),
+('Isidoro Borges Acevedo','15777665-8', '34', 'Masculino',  '0'),
+('Pablo Reyes Basoalto','16445332-8', '33', 'Masculino',  '0'),
+('Gabriel Godoy Alcayaga','16466433-8', '32', 'Masculino',  '0'),
+('Octavio Paz Lozano','21464333-8', '22', 'Masculino',  '0'),
+('Carlos Fuentes Macías','19776544-8', '27', 'Masculino',  '0'),
+('Julio Cortázar Descotte','18777442-8', '28', 'Masculino',  '0'),
+('Ernesto Sabato Onaindia','17121331-8', '32', 'Masculino',  '0'),
+('Adolfo Casares Borges','17331443-8', '33', 'Masculino',  '0'),
+('Juan Pérez Alegría','17411666-8', '31', 'Masculino',  '0'),
+('Eduardo Galeano Benedetti','17419987-8', '34', 'Masculino', '0');
+
+
+
+ INSERT INTO app_receta (medico_asociado, diagnostico, medicamento, cantidad, dosis_total, cesfam_id, paciente_id)
+  VALUES 
+  ('Fernando Barria', 'Artritis reumatoide', 'Celecoxib 200mg', '30', '1 al día x 30 días', '1', '1'),
+  ('Jorge Ortíz', 'Diabetes tipo 2', 'Metformina 850mg', '60', '2 al día x 30 días', '2',  '2'),
+  ('Daniela Galaz', 'Diabetes tipo 2', 'Metformina 500mg', '60', '2 al día x 30 días', '3',  '3'),
+  ('Jaime Reyes', 'Hipertensión arterial', 'Enalapril 10mg', '60', '2 al día x 30 días', '4',  '4'),
+  ('Fernando Barria', 'Diabetes tipo 2', 'Glibenclamida 5 mg', '30', '1 al día x 30 días', '5',  '5'),
+  ('Jorge Ortíz', 'Diabetes tipo 2', 'Glibenclamida 5mg', '30', '1 al día x 30 días', '6',  '6'),
+  ('Daniela Galaz', 'Diabetes tipo 2', 'Metformina 850mg', '60', '2 al día x 30 días', '7',  '7'),
+  ('Jaime Reyes', 'Diabetes tipo 2', 'Metformina 850mg', '90', '3 al día x 30 días', '8',  '8'),
+  ('Anaís Toledo', 'Diabetes tipo 2', 'Metformina 850mg', '60', '2 al día x 30 días', '1',  '9'),
+  ('Antonia Aranguiz', 'Hipertensión arterial', 'Valsartán 160mg', '30', '1 al día x 30 días', '2',  '10'),
+
+  ('Javiera Palma', 'Diabetes tipo 2', 'Metformina 500mg', '30', '1 al día x 30 días', '3',  '11'),
+  ('Daniela Galaz', 'Diabetes tipo 2', 'Metformina 850mg', '30', '1 al día x 30 días', '4',  '12'),
+  ('Jaime Reyes', 'Hipertensión arterial', 'Losartán 50mg', '30', '1 al día x 30 días', '5',  '13'),
+  ('Anaís Toledo', 'Desorden Hormonal', 'Novafem 25mg', '1', '1 inyección cada 30 días', '6',  '14'),
+  ('Antonia Aranguiz', 'Rinofaringitis', 'Desloratadina 5mg', '14', '2 al día x 7 días', '7',  '15'),
+  ('Javiera Palma', 'Rinofaringitis', 'Clorfenamina 4mg', '7', '1 al día x 7 días', '8',  '16'),
+  ('Jorge Ortíz', 'Rinofaringitis', 'Loratadina 10mg', '14', '2 al día, x 7 días', '1',  '17'),
+  ('Daniela Galaz', 'Hipertensión arterial', 'Losartán 50mg', '60', '2 al día x 30 días', '2',  '18'),
+  ('Jaime Reyes', 'Rinofaringitis', 'Loratadina 10mg', '7', '1 al día x 7 días', '3',  '19'),
+  ('Fernando Barria', 'Rinofaringitis', 'Clorfenamina 4mg', '14', '2 al día x 7 días', '4',  '20'),
+
+  ('Jorge Ortíz', 'Rinofaringitis', 'Desloratadina 5mg', '7', '1 al día x 7 días', '5',  '21'),
+  ('Daniela Galaz', 'Hipertensión arterial', 'Valsartán 160mg', '30', '1 al día x 30 días', '6',  '22'),
+  ('Jaime Reyes', 'Depresión', 'Escitalopram 10mg', '30', '1 al día x 30 días', '7',  '23'),
+  ('Anaís Toledo', 'Trastorno del ánimo', 'Carbonato de Litio 300mg', '15', '1/2 al día x 30 días', '8',  '24'),
+  ('Antonia Aranguiz', 'Hipertensión arterial', 'Enalapril 10mg', '30', '1 al día x 30 días', '1',  '25'),
+  ('Javiera Palma', 'Resfrío', 'Paracetamol 500mg', '14', '2 al día x 7 días', '2',  '26'),
+  ('Daniela Galaz', 'Depresión', 'Fluoxetina 20mg', '60', '2 al día x 30 días', '3',  '27'),
+  ('Jaime Reyes', 'Artritis reumatoide', 'Celecoxib 200mg', '30', '1 al día x 30 días', '4',  '28'),
+  ('Anaís Toledo', 'Resfrío', 'Paracetamol 1000mg', '7', '1 al día x 7 días', '5',  '29'),
+  ('Daniela Galaz', 'Rinofaringitis', 'Levocetirizina 5mg', '7', '1 al día x 7 días', '6',  '30'),
+
+  ('Jaime Reyes', 'Fibromialgia', 'Ibuprofeno 600mg', '60', '2 al día x 30 días', '7',  '31'),
+  ('Fernando Barria', 'Resfrío', 'Paracetamol 1000mg', '7', '1 al día x 7 días', '8',  '32'),
+  ('Jorge Ortíz', 'Dolor leve', 'Ibuprofeno 400mg', '7', '1 al día x 7 días', '1',  '33'),
+  ('Daniela Galaz', 'Fibromialgia', 'Celecoxib 200mg', '60', '2 al día x 30 días', '2',  '34'),
+  ('Jaime Reyes', 'Amigdalitis', 'Amoxicilina 500mg', '14', '2 al día x 7 días', '3',  '35'),
+  ('Antonia Aranguiz', 'Amigdalitis', 'Levofloxacina 750mg', '7', '1 al día x 7 días', '4',  '36'),
+  ('Javiera Palma', 'Insomnio', 'Quetiapina 100mg', '30', '1 en la noche x 30 días', '5', '37'),
+  ('Jorge Ortíz', 'Dolor leve', 'Ketoprofeno 50mg', '3', '1 al día x 3 días', '6', '38'),
+  ('Daniela Galaz', 'Resfrío', 'Paracetamol 500mg', '7', '1 al día x 7 días', '7',  '39'),
+  ('Jaime Reyes', 'Insomnio', 'Quetiapina 25mg', '30' , '1 en la noche x 30 días', '8',  '40'),
+  
+  ('Fernando Barria', 'Amigdalitis', 'Levofloxacina 750mg', '7', '1 al día x 7 días', '1',  '41'),
+  ('Jaime Reyes', 'Amigdalitis', 'Amoxicilina 500mg', '14', '2 al día x 7 días', '2',  '42'),
+  ('Anaís Toledo', 'Hipertensión arterial', 'Valsartán 160mg', '30', '1 al día x 30 días', '3', '43'),
+  ('Antonia Aranguiz', 'Dolor leve', 'Ibuprofeno 400mg', '7', '1 al día x 7 días', '4',  '44'),
+  ('Javiera Palma', 'Amigdalitis', 'Amoxicilina 500mg', '14', '2 al día x 7 días', '5',  '45'),
+  ('Daniela Galaz', 'Hipertensión arterial', 'Losartán 50mg', '60', '2 al día x 30 días', '6', '46'),
+  ('Jaime Reyes', 'Insomnio', 'Quetiapina 100mg', '30', '1 en la noche x 30 días',  '7', '47'),
+  ('Anaís Toledo', 'Fibromialgia', 'Ibuprofeno 600mg', '60', '2 al día x 30 días', '8',  '48'),
+  ('Antonia Aranguiz', 'Insomnio', 'Quetiapina 25mg', '30' , '1 en la noche x 30 días', '1',  '49'),
+  ('Javiera Palma', 'Hipertensión arterial', 'Enalapril 10mg', '60', '2 al día x 30 días', '2',  '50'),
+  
+  ('Jaime Reyes', 'Resfrío', 'Paracetamol 500mg', '7', '1 al día x 7 días', '3', '51'),
+  ('Anaís Toledo', 'Rinofaringitis', 'Loratadina 10mg', '14', '2 al día x 7 días', '4', '52'),
+  ('Antonia Aranguiz', 'Rinofaringitis', 'Levocetirizina 5mg', '7', '1 al día x 7 días', '5', '53'),
+  ('Javiera Palma', 'Rinofaringitis', 'Levocetirizina 5mg', '7', '1 al día x 7 días', '6', '54'),
+  ('Daniela Galaz', 'Rinofaringitis','Levocetirizina 5mg', '7', '1 al día x 7 días', '7',  '55'),
+  ('Jaime Reyes', 'Rinofaringitis', 'Levocetirizina 5mg', '7', '1 al día x 7 días', '8', '56'),
+  ('Anaís Toledo', 'Rinofaringitis', 'Loratadina 10mg', '14', '2 al día, x 7 días', '1', '57'),
+  ('Antonia Aranguiz', 'Rinofaringitis', 'Loratadina 10mg', '14', '2 al día x 7 días', '2', '58'),
+  ('Javiera Palma', 'Diabetes tipo 2', 'Glibenclamida 5 mg', '30', '1 al día x 30 días', '3',  '59'),
+  ('Jorge Ortíz', 'Diabetes tipo 2', 'Glibenclamida 5 mg', '30', '1 al día x 30 días',  '4', '60'),
+  
+  ('Daniela Galaz', 'Diabetes tipo 2', 'Glibenclamida 5 mg', '30', '1 al día x 30 días', '5',  '61'),
+  ('Jaime Reyes', 'Diabetes tipo 2', 'Metformina 850mg', '60', '2 al día x 30 días', '6',  '62'),
+  ('Fernando Barria', 'Diabetes tipo 2', 'Metformina 500mg', '60', '2 al día x 30 días', '7',  '63'),
+  ('Jorge Ortíz', 'Diabetes tipo 2', 'Metformina 500mg', '60', '2 al día x 30 días', '8',  '64'),
+  ('Daniela Galaz', 'Diabetes tipo 2', 'Metformina 850mg', '60', '2 al día x 30 días', '1',  '65'),
+  ('Jaime Reyes', 'Diabetes tipo 2', 'Glibenclamida 5 mg', '30', '1 al día x 30 días', '2',  '66'),
+  ('Anaís Toledo', 'Diabetes tipo 2', 'Metformina 500mg', '60', '2 al día x 30 días', '3',  '67'),
+  ('Antonia Aranguiz', 'Epilepsia', 'Lamotrigina 100mg', '30', '1 al día x 30 días', '4', '68'),
+  ('Javiera Palma', 'Trastorno del ánimo', 'Carbonato de Litio 300mg', '15', '1/2 al día x 30 días', '5',  '69'),
+  ('Daniela Galaz', 'Trastorno del ánimo', 'Ácido Valproico 250mg', '30', '1 al día x 30 días', '6', '70'),
+  
+  ('Jaime Reyes', 'Depresión', 'Fluoxetina 20mg', '60', '2 al día x 30 días', '7',  '71'),
+  ('Anaís Toledo', 'Depresión', 'Fluoxetina 20mg', '15', '1/2 al día x 30 días', '8',  '72'),
+  ('Daniela Galaz', 'Depresión', 'Fluoxetina 20mg', '30', '1 al día x 30 días', '1', '73'),
+  ('Jaime Reyes', 'Trastorno del ánimo', 'Carbonato de Litio 300mg', '15', '1/2 al día x 30 días', '2',  '74'),
+  ('Fernando Barria', 'Trastorno del ánimo', 'Ácido Valproico 500mg', '30', '1 al día x 30 días', '3',  '75'),
+  ('Jorge Ortíz', 'Bronquitis', 'Amoxicilina 500mg', '14', '2 al día x 7 días',  '4', '76'),
+  ('Daniela Galaz', 'Bronquitis','Amoxicilina 500mg', '14', '2 al día x 7 días', '5',  '77'),
+  ('Jaime Reyes', 'Bronquitis', 'Levofloxacina 750mg', '7', '1 al día x 7 días', '6',  '78'),
+  ('Antonia Aranguiz', 'Bronquitis', 'Levofloxacina 750mg', '7', '1 al día x 7 días', '7',  '79'),
+  ('Javiera Palma', 'Bronquitis', 'Levofloxacina 750mg', '7', '1 al día x 7 días', '8',  '80'),
+  
+  ('Jorge Ortíz', 'Insomnio', 'Aripiprazol 10mg', '15', '1/2 en la noche x 30 días', '1',  '81'),
+  ('Daniela Galaz', 'Trastorno del ánimo', 'Carbonato de Litio 300mg', '30', '1 al día x 30 días', '2',   '82'),
+  ('Jaime Reyes', 'Resfrío', 'Paracetamol 500mg', '7', '1 al día x 7 días', '3',  '83'),
+  ('Fernando Barria', 'Dolor leve', 'Ketoprofeno 50mg', '7', '1 al día x 7 días', '4',  '84'),
+  ('Jaime Reyes', 'Dolor leve', 'Ketoprofeno 50mg', '3', '1 al día x 3 días', '5',  '85'),
+  ('Anaís Toledo', 'Dolor leve', 'Ibuprofeno 400mg', '3', '1 al día x 3 días', '6', '86'),
+  ('Antonia Aranguiz', 'Resfrío', 'Paracetamol 1000mg', '5', '1 al día x 5 días', '7',  '87'),
+  ('Javiera Palma', 'Influenza', 'Paracetamol 1000mg', '21', '3 al día x 7 días', '8', '88'),
+  ('Daniela Galaz', 'Epilepsia', 'Lamotrigina 25mg', '30', '1 al día x 30 días', '1',  '89'),
+  ('Jaime Reyes', 'Influenza', 'Paracetamol 1000mg', '21', '3 al día x 7 días', '2', '90');
+  
+  
+  
+  INSERT INTO app_despacho ( fecha_emision, cantidad_medicamento, cesfam_id, medicamento_id, paciente_id, receta_id)
+  VALUES 
+  ('2023-06-11','30','1','23','1','1'),
+  ('2023-01-24','60','2','36','2','2'),
+  ('2023-01-24','60','1','37','3','3'),
+  ('2023-01-25','60','4','35','4','4'),
+  ('2023-01-04','60','4','35','4','4'),
+  ('2023-02-03','30','3','38','5','5'),
+  ('2023-02-10','30','5','38','6','6'),
+  ('2023-01-10','60','5','36','7','7'),
+  ('2023-03-09','90','6','36','8','8'),
+  ('2023-03-09','60','7','36','9','9'),
+  ('2023-03-17','30','8','34','10','10'),
+  ('2023-04-04','30','8','37','11','11'),
+  ('2023-04-05','30','6','36','12','12'),
+  ('2023-04-06','30','7','33','13','13'),
+  ('2023-04-04','1','8','64','14','14'),
+  ('2023-04-05','14','6','5','15','15'),
+  
+  ('2023-06-04','7','5','6','16','16'),
+  ('2023-04-04','14','5','3','17','17'),
+  ('2023-05-20','60','2','33','18','18'),
+  ('2023-05-23','7','1','3','19','19'),
+  ('2023-05-18','14','2','6','20','20'),
+  ('2023-05-24','7','1','5','21','21'),
+  ('2023-06-25','30','2','34','22','22'),
+  ('2023-06-26','30','4','39','23','23'),
+  ('2023-06-27','15','6','62','24','24'),
+  ('2023-06-30','30','6','35','25','25'),
+  ('2023-07-28','14','7','15','26','26'),
+  ('2023-07-01','60','1','43','27','27'),
+  ('2023-08-02','30','2','23','28','28'),
+  ('2023-08-03','7','3','23','29','29'),
+  ('2023-09-06','7','4','4','30','30'),
+  
+  ('2023-09-07','60','5','20','31','31'),
+  ('2023-10-08','7','6','22','32','32'),
+  ('2023-11-10','7','7','19','33','33'),  
+  ('2023-12-10','60','8','17','34','34'),  
+  ('2023-01-24','14','1','25','35','35'),  
+  ('2023-02-10','7','2','26','36','36'), 
+  ('2023-03-09','30','3','53','37','37'),  
+  ('2023-06-04','3','4','24','38','38'), 
+  ('2023-05-20','7','5','21','39','39'),  
+  ('2023-06-25','30','6','52','40','40'),  
+  ('2023-07-01','7','7','26','41','41'),
+  ('2023-12-10','14','8','25','42','42'),
+  ('2023-09-06','30','1','34','43','43'),
+  ('2023-10-08','7','2','19','44','44'),
+  ('2023-12-10','14','3','25','45','45'),
+    
+	
+  ('2023-06-04','60','4','33','46','46'),  
+  ('2023-05-20','30','5','53','47','47'),
+  ('2023-06-20','60','6','20','48','48'),
+  ('2023-04-06','30','7','52','49','49'),
+  ('2023-05-20','60','8','35','50','50'),  
+  ('2023-06-25','7','8','21','51','51'),
+  ('2023-07-01','14','1','3','52','52'),  
+  ('2023-04-06','7','1','4','53','53'),
+  ('2023-05-20','7','6','4','54','54'),
+  ('2023-06-25','7','5','4','55','55'),
+  ('2023-01-07','7','5','4','56','56'),
+  ('2023-06-25','14','6','3','57','57'),
+  ('2023-02-07','14','8','3','58','58'),  
+  ('2023-02-08','30','4','38','59','59'),
+  ('2023-08-10','30','3','38','60','60'),
+  
+  ('2023-07-02','30','1','38','61','61'),
+  ('2023-09-06','60','2','36','62','62'),  
+  ('2023-02-23','60','5','37','63','63'),  
+  ('2023-03-03','60','6','37','64','64'),
+  ('2023-10-03','60','5','36','65','65'),
+  ('2023-06-13','30','4','38','66','66'),  
+  ('2023-06-14','60','2','36','67','67'),
+  ('2023-09-06','30','3','50','68','68'),  
+  ('2023-09-06','15','5','62','69','69'),
+  ('2023-09-19','30','8','58','70','70'),  
+  ('2023-09-19','60','8','43','71','71'),
+  ('2023-09-19','15','6','43','72','72'),
+  ('2023-09-19','30','1','43','73','73'),  
+  ('2023-09-19','15','2','62','74','74'),  
+  ('2023-02-13','30','1','59','75','75'),
+ 
+  
+  ('2023-07-24','14','4','25','76','76'),
+  ('2023-03-07','14','4','25','77','77'),
+  ('2023-03-07','7','2','26','78','78'),
+  ('2023-03-14','7','5','26','79','79'),
+  ('2023-11-01','7','7','26','80','80'),
+  ('2023-11-01','15','8','55','81','81'),
+  ('2023-02-10','30','2','62','82','82'),  
+  ('2023-02-10','7','5','15','83','83'),
+  ('2023-08-17','7','4','24','84','84'),
+  ('2023-06-14','3','2','24','85','85'),
+  ('2023-06-14','3','5','19','86','86'),
+  ('2023-06-14','5','8','22','87','87'),
+  ('2023-07-26','21','2','22','88','88'),
+  ('2023-07-26','30','2','48','89','89'),
+  ('2023-07-27','21','1','22','90','90');
+  
